@@ -16,53 +16,38 @@ module.exports = {
   // purgeCacheOnDeploy: false,
   // // purgeCacheOnDeploy: false,
 
-  // origins: [
-  //   {
-  //     // The name of the backend origin
-  //     name: "origin",
+  origins: [
+    {
+      // The name of the backend origin
+      name: "origin",
 
-  //     // Use the following to override the host header sent from the browser when connecting to the origin
-  //     override_host_header: "test-origin.edgio.net",
+      // Use the following to override the host header sent from the browser when connecting to the origin
+      override_host_header: "bp.bpillsbury.com",
 
-  //     // The list of origin hosts to which to connect
-  //     hosts: [
-  //       {
-  //         // The domain name or IP address of the origin server
-  //         location: "test-origin.edgio.net",
-  //       },
-  //     ],
+      // The list of origin hosts to which to connect
+      hosts: [
+        {
+          // The domain name or IP address of the origin server
+          location: "bp.bpillsbury.com",
+        },
+      ],
 
-  //     tls_verify: {
-  //       use_sni: true,
-  //       sni_hint_and_strict_san_check: "test-origin.edgio.net",
-  //     },
+      tls_verify: {
+        use_sni: true,
+        sni_hint_and_strict_san_check: "bp.bpillsbury.com",
+      },
 
-  //     // Uncomment the following to configure a shield
-  //     // shields: { us_east: 'DCD' },
-  //   },
-  // ],
+      // Uncomment the following to configure a shield
+      // shields: { us_east: 'DCD' },
+    },
+  ],
 
   // // Uncomment the following to specify environment specific configs
-  // // environments: {
-  // //   production: {
-  // //     hostnames: [{ hostname: 'www.mysite.com' }],
-  // //   },
-  // //   staging: {
-  // //     hostnames: [{ hostname: 'staging.mysite.com' }],
-  // //     origins: [
-  // //       {
-  // //         name: 'origin',
-  // //         hosts: [{ location: 'staging-origin.mysite.com' }],
-  // //         override_host_header: 'staging-origin.mysite.com',
-  // //         tls_verify: {
-  // //           use_sni: true,
-  // //           sni_hint_and_strict_san_check: 'staging-origin.mysite.com',
-  // //         },
-  // //         shields: { us_east: 'DCD' },
-  // //       },
-  // //     ],
-  // //   },
-  // // },
+  environments: {
+    default: {
+      hostnames: [{ hostname: 'bp.bpillsbury.com' }],
+    },
+  },
 
   // // Options for hosting serverless functions on Edgio
   // // serverless: {
