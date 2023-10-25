@@ -9,6 +9,17 @@ export default new Router()
   .use(edgioRoutes)
 
   //enable-no-cache
-  .always({ caching: { bypass_cache: true } });
+  .always({ caching: { bypass_cache: true } })
 
-  
+  //HTTP > HTTPS Redirect
+  .match(
+    { scheme: "HTTP" },
+    {
+      comment: "redirect HTTP to HTTPS for requests",
+      url: {
+        url_redirect: { source: "(.*)", destination: "https://$1", code: 302 },
+      },
+    }
+  );
+
+ 
