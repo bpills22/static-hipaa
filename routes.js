@@ -7,3 +7,6 @@ export default new Router()
 .get("/",({serveStatic})=> serveStatic("src/index.html"))
   // automatically adds all routes from the Node.js connector
   .use(edgioRoutes)
+
+  //enable-no-cache
+  .always({ caching: { bypass_cache: true } });
