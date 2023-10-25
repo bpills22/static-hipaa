@@ -11,17 +11,4 @@ export default new Router()
   //enable-no-cache
   .always({ caching: { bypass_cache: true } });
 
-  //redirect HTTP > HTTPS
-  .match(
-    { scheme: "HTTP" },
-    {
-      comment: "redirect HTTP to HTTPS for all requests",
-      url: {
-        url_redirect: {
-          source: "(.*)",
-          destination: "https://%{host}$1",
-          code: 302,
-        },
-      },
-    }
-  );
+  
