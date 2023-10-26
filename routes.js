@@ -20,12 +20,12 @@ export default new Router()
         url_redirect: { source: "(.*)", destination: "https://$1", code: 302 },
       },
     }
-  )
+  );
 
   //restrict site access to Massachusetts
-  .if(
-    { edgeControlCriteria: { "!==": [{ location: "region_code" }, "US-MA"] } },
-    { access: { deny_access: true } }
-  );
+  // .if(
+  //   { edgeControlCriteria: { "!==": [{ location: "region_code" }, "US-MA"] } },
+  //   { access: { deny_access: true } }
+  // );
 
  
