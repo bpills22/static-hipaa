@@ -4,7 +4,6 @@ html, body {
     height: 100%; /* ensures the gradient covers the full height of the viewport */
 }
 
-
 h1 {
     font-size: 48px;
     color: rgb(0, 157, 255);
@@ -19,18 +18,21 @@ table {
     margin-top: 15px;
     margin-left: auto;
     margin-right: auto;
-}
-
-table, th, td {
-    border: 2px solid black !important; /* This sets a border around the table, headers, and cells */
+    background-color: #fff; /* Added to give a white background */
 }
 
 th, td {
     padding: 15px;
+    border: 2px solid black !important; /* This sets a border around the table, headers, and cells */
     text-align: center;
 }
 
-thead, th {
+th {
+    background-color: #4CAF50; /* Adjusted to match the color provided earlier */
+    color: white;
+}
+
+thead {
     background-color: #68cf80; 
 }
 
