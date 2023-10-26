@@ -13,7 +13,7 @@ module.exports = {
 
   // // When set to true or omitted entirely, Edgio includes the deployment number in the cache key,
   // // effectively purging the cache each time you deploy.
-  // purgeCacheOnDeploy: false,
+  purgeCacheOnDeploy: true,
   // // purgeCacheOnDeploy: false,
 
   origins: [
