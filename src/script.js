@@ -2,6 +2,13 @@ document.addEventListener("DOMContentLoaded", function() {
     const data = {
         "bloodPressureReadings": [
             {
+                "date": "10-26-2023",
+                "time": "12:12pm",
+                "systolic": 121,
+                "diastolic": 83,
+                "pulse": 63
+            },
+            {
                 "date": "10-24-2023",
                 "time": "8:40am",
                 "systolic": 119,
