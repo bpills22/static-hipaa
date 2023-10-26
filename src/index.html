@@ -8,6 +8,8 @@
 </head>
 <body>
     <h1>BP Readings</h1>
+    <button id="showAverages">Averages</button>
+
     <table>
         <thead>
             <tr>
@@ -23,6 +25,27 @@
         </tbody>
     </table>
 
+    <div id="averagesPopup" class="popup">
+        <div class="popup-content">
+            <span id="closePopup" class="close">&times;</span>
+            <h2>Averages</h2>
+            <table>
+                <tr>
+                    <td>Average Systolic:</td>
+                    <td id="avgSystolic"></td>
+                </tr>
+                <tr>
+                    <td>Average Diastolic:</td>
+                    <td id="avgDiastolic"></td>
+                </tr>
+                <tr>
+                    <td>Average Pulse:</td>
+                    <td id="avgPulse"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    
     <script src="script.js"></script>
 </body>
 </html>

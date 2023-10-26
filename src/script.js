@@ -137,3 +137,30 @@ document.addEventListener("DOMContentLoaded", function() {
         tableBody.appendChild(row);
     });
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("showAverages").addEventListener("click", function() {
+        let rows = document.getElementById("bpReadingsTableBody").rows;
+        let totalSystolic = 0, totalDiastolic = 0, totalPulse = 0;
+
+        for (let row of rows) {
+            totalSystolic += parseInt(row.cells[2].textContent, 10);
+            totalDiastolic += parseInt(row.cells[3].textContent, 10);
+            totalPulse += parseInt(row.cells[4].textContent, 10);
+        }
+
+        let avgSystolic = totalSystolic / rows.length;
+        let avgDiastolic = totalDiastolic / rows.length;
+        let avgPulse = totalPulse / rows.length;
+
+        document.getElementById("avgSystolic").textContent = avgSystolic.toFixed(2);
+        document.getElementById("avgDiastolic").textContent = avgDiastolic.toFixed(2);
+        document.getElementById("avgPulse").textContent = avgPulse.toFixed(2);
+
+        document.getElementById("averagesPopup").style.display = "block";
+    });
+
+    document.getElementById("closePopup").addEventListener("click", function() {
+        document.getElementById("averagesPopup").style.display = "none";
+    });
+});
