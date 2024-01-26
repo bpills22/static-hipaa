@@ -3,13 +3,21 @@ import { Router, edgioRoutes } from '@edgio/core/router'
 
 
 export default new Router()
-.get("/:path*",({serveStatic})=> serveStatic("src/:path*"))
-.get("/",({serveStatic})=> serveStatic("src/index.html"))
+  .get("/:path*", ({ serveStatic }) => serveStatic("src/:path*"))
+  .get("/", ({ serveStatic }) => serveStatic("src/index.html"))
   // automatically adds all routes from the Node.js connector
   .use(edgioRoutes)
 
-  //enable-no-cache
-  .always({ caching: { bypass_cache: true } })
+  .always({
+    //enable-no-cache
+    caching: { bypass_cache: true },
+
+    //set geo header and req cookie
+    headers: {
+      set_response_headers: { "edg-user-geo": "%{geo_city}" },
+      set_request_headers: { "cookie": "logged_in=false" }
+    }
+  })
 
   //HTTP > HTTPS Redirect
   .match(
@@ -22,10 +30,3 @@ export default new Router()
     }
   );
 
-  //restrict site access to Massachusetts
-  // .if(
-  //   { edgeControlCriteria: { "!==": [{ location: "region_code" }, "US-MA"] } },
-  //   { access: { deny_access: true } }
-  // );
-
- 

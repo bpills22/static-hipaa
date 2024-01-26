@@ -6,7 +6,7 @@ module.exports = {
   name: "static-site-hipaa",
 
   // // The name of the organization in Edgio to which this app should be deployed.
-  // // organization: 'my-organization-name',
+  organization: 'se-apps',
 
   // // Overrides the default path to the routes file. The path should be relative to the root of your app.
   // // routes: 'routes.js',
@@ -45,9 +45,13 @@ module.exports = {
   // // Uncomment the following to specify environment specific configs
   environments: {
     default: {
-      hostnames: [{ hostname: 'bp.bpillsbury.com' }],
+      hostnames: [
+        { hostname: 'bp.bpillsbury.com' },
+        { hostname: 'wwwbp.bpillsbury.com' }
+      ],
     },
   },
+
 
   // // Options for hosting serverless functions on Edgio
   // // serverless: {
