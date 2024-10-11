@@ -1,6 +1,13 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const data = {
         "bloodPressureReadings": [
+            {
+                "date": "10-11-2024",
+                "time": "12:12pm",
+                "systolic": 130,
+                "diastolic": 84,
+                "pulse": 69
+            },
             {
                 "date": "10-26-2023",
                 "time": "12:12pm",
@@ -138,8 +145,8 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("showAverages").addEventListener("click", function() {
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("showAverages").addEventListener("click", function () {
         let rows = document.getElementById("bpReadingsTableBody").rows;
         let totalSystolic = 0, totalDiastolic = 0, totalPulse = 0;
 
@@ -160,7 +167,7 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("averagesPopup").style.display = "block";
     });
 
-    document.getElementById("closePopup").addEventListener("click", function() {
+    document.getElementById("closePopup").addEventListener("click", function () {
         document.getElementById("averagesPopup").style.display = "none";
     });
 });
