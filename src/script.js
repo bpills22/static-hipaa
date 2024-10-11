@@ -4,9 +4,9 @@ document.addEventListener("DOMContentLoaded", function () {
             {
                 "date": "10-11-2024",
                 "time": "12:12pm",
-                "systolic": 130,
-                "diastolic": 84,
-                "pulse": 69
+                "systolic": 125,
+                "diastolic": 80,
+                "pulse": 60
             },
             {
                 "date": "10-26-2023",
